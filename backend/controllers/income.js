@@ -1,6 +1,7 @@
-const IncomeSchema= require("../models/IncomeModel")
-
-
+const IncomeSchema= require("../models/IncomeModel");
+// exports.addIncome = async (req, res) => {
+//     console.log(req.body);
+// }
 exports.addIncome = async (req, res) => {
     const {title, amount, category, description, date}  = req.body
 
@@ -40,6 +41,7 @@ exports.getIncomes = async (req, res) =>{
 
 exports.deleteIncome = async (req, res) =>{
     const {id} = req.params;
+    // console.log(req.params);
     IncomeSchema.findByIdAndDelete(id)
         .then((income) =>{
             res.status(200).json({message: 'Income Deleted'})
@@ -47,4 +49,15 @@ exports.deleteIncome = async (req, res) =>{
         .catch((err) =>{
             res.status(500).json({message: 'Server Error'})
         })
+}
+
+exports.queryIn= async(req,res)=>{
+    IncomeSchema.find()
+    
+    .then((income) =>{ res.json(income)
+    })
+    .catch((error) =>{
+        res.status(500).json({message: error.message})
+    })
+
 }

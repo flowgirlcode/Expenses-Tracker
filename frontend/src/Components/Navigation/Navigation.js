@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import avatar from '../../img/avatar.png'
+import avatar from '../../img/rupee.png'
 import { signout } from '../../utils/Icons'
 import { menuItems } from '../../utils/menuItems'
 
@@ -11,7 +11,7 @@ function Navigation({active, setActive}) {
             <div className="user-con">
                 <img src={avatar} alt="" />
                 <div className="text">
-                    <h2>Mike</h2>
+                    <h2>User</h2>
                     <p>Your Money</p>
                 </div>
             </div>
@@ -21,7 +21,7 @@ function Navigation({active, setActive}) {
                         key={item.id}
                         onClick={() => setActive(item.id)}
                         className={active === item.id ? 'active': ''}
-                    >
+                        >
                         {item.icon}
                         <span>{item.title}</span>
                     </li>
@@ -37,13 +37,12 @@ function Navigation({active, setActive}) {
 }
 
 const NavStyled = styled.nav`
-    padding: 2rem 1.5rem;
-    width: 374px;
+    padding: 1.5rem;
+    width: 370px;
     height: 100%;
-    background: rgba(252, 246, 249, 0.78);
-    border: 3px solid #FFFFFF;
+    background-color: whitesmoke;
+    border: 3px solid green;
     backdrop-filter: blur(4.5px);
-    border-radius: 32px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -52,16 +51,17 @@ const NavStyled = styled.nav`
         height: 100px;
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1.5rem;
+        background-color: gainsboro;
         img{
             width: 80px;
             height: 80px;
             border-radius: 50%;
             object-fit: cover;
             background: #fcf6f9;
-            border: 2px solid #FFFFFF;
-            padding: .2rem;
-            box-shadow: 0px 1px 17px rgba(0, 0, 0, 0.06);
+            border: 1px solid green;
+            padding: .4rem;
+            box-shadow: 0px 1px 17px rgba(0, 0, 0, 0.3);
         }
         h2{
             color: rgba(34, 34, 96, 1);
@@ -88,26 +88,18 @@ const NavStyled = styled.nav`
             position: relative;
             i{
                 color: rgba(34, 34, 96, 0.6);
-                font-size: 1.4rem;
+                font-size: 1.5rem;
                 transition: all .4s ease-in-out;
+                color: #b2b2b2;
             }
         }
     }
 
     .active{
         color: rgba(34, 34, 96, 1) !important;
+        font-size:17px;
         i{
             color: rgba(34, 34, 96, 1) !important;
-        }
-        &::before{
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background: #222260;
-            border-radius: 0 10px 10px 0;
         }
     }
 `;

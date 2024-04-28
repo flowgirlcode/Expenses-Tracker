@@ -6,7 +6,7 @@ function Orb() {
 
     const {width, height} = useWindowSize()
 
-    console.log(width, height)
+    //console.log(width, height)
 
     const moveOrb = keyframes`
         0%{
@@ -21,14 +21,16 @@ function Orb() {
     `
 
     const OrbStyled = styled.div`
-        width: 70vh;
-        height: 70vh;
+        width: 50vh;
+        height: 50vh;
         position: absolute;
         border-radius: 50%;
         margin-left: -37vh;
-        margin-top: -37vh;
-        background: linear-gradient(180deg, #F56692 0%, #F2994A 100%);
-        filter: blur(400px);
+        margin-top: -37vh; 
+        background-color:gainsboro;
+        border: 100px solid green;
+         /* background: linear-gradient(180deg, #F56692 0%, #F2994A 100%); */
+        filter: blur(40px);  
         animation: ${moveOrb} 15s alternate linear infinite;
     `;
 

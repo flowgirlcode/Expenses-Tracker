@@ -8,27 +8,24 @@ export const GlobalStyle = createGlobalStyle`
         list-style: none;
     }
 
-    :root{
-        --primary-color: #222260;
-        --primary-color2: 'color: rgba(34, 34, 96, .6)';
-        --primary-color3: 'color: rgba(34, 34, 96, .4)';
-        --color-green: #42AD00;
-        --color-grey: #aaa;
-        --color-accent: #F56692;
-        --color-delete: #FF0000;
-    }
-
     body{
-        font-family: 'Nunito', sans-serif;
-        font-size: clamp(1rem, 1.5vw, 1.2rem);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         overflow: hidden;
-        color: rgba(34, 34, 96, .6);
+        color:rgba(34, 34, 96, .6);
     }
 
-    h1, h2, h3, h4, h5, h6{
+    h1,h3,h2,h4, h5, h6{
         color: var(--primary-color);
     }
-
+    :root{
+        --primary-color:#222260;
+        --primary-color2: 'color: rgba(34, 34, 96, .6)';
+        --primary-color3: 'color: rgba(34, 34, 96, .4)';
+        --color-green:#166616;
+        --color-grey: #aaa;
+        --color-accent:lightgreen;
+        --color-delete: #FFF;
+    }
     .error{
         color: red;
         animation: shake 0.5s ease-in-out;

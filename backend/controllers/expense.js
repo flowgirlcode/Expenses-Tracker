@@ -41,10 +41,25 @@ exports.getExpense = async (req, res) =>{
 exports.deleteExpense = async (req, res) =>{
     const {id} = req.params;
     ExpenseSchema.findByIdAndDelete(id)
+   
         .then((income) =>{
+            if(!id){
+                return res.send(400).json({message:"not found"})
+            }
             res.status(200).json({message: 'Expense Deleted'})
         })
         .catch((err) =>{
             res.status(500).json({message: 'Server Error'})
         })
+}
+
+exports.queryEx = async(req,res)=>{
+    ExpenseSchema.find()
+    
+    .then((expense) =>{ res.json(expense)
+    })
+    .catch((error) =>{
+        res.status(500).json({message: error.message})
+    })
+
 }

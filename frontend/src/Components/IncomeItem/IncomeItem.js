@@ -65,7 +65,7 @@ function IncomeItem({
     console.log('type', type)
 
     return (
-        <IncomeItemStyled indicator={indicatorColor}>
+        <IncomeItemStyled indicator={indicatorColor} >
             <div className="icon">
                 {type === 'expense' ? expenseCatIcon() : categoryIcon()}
             </div>
@@ -73,7 +73,7 @@ function IncomeItem({
                 <h5>{title}</h5>
                 <div className="inner-content">
                     <div className="text">
-                        <p>{dollar} {amount}</p>
+                        <p> {'₹'+amount}</p>
                         <p>{calender} {dateFormat(date)}</p>
                         <p>
                             {comment}
@@ -83,12 +83,12 @@ function IncomeItem({
                     <div className="btn-con">
                         <Button 
                             icon={trash}
-                            bPad={'1rem'}
-                            bRad={'50%'}
-                            bg={'var(--primary-color'}
+                            bPad={'.5rem'}
+                            bRad={'20%'}
+                            bg={'var(--color-grey'}
                             color={'#fff'}
-                            iColor={'#fff'}
-                            hColor={'var(--color-green)'}
+                            iColor={'white'}
+                            hColor={'var(--color-grey)'}
                             onClick={() => deleteItem(id)}
                         />
                     </div>
@@ -102,25 +102,25 @@ const IncomeItemStyled = styled.div`
     background: #FCF6F9;
     border: 2px solid #FFFFFF;
     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-    border-radius: 20px;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    //border-radius: 20px;
+    padding:0rem;
+    margin-bottom: .1rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     width: 100%;
-    color: #222260;
+    color: green;//#222260;
     .icon{
-        width: 80px;
-        height: 80px;
-        border-radius: 20px;
-        background: #F5F5F5;
+        width: 30px;
+        height: 30px;
+       // border-radius: 20px;
+        background: #ddd;//#F5F5F5;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid #FFFFFF;
+        border: 3px solid #d2d2d2;
         i{
-            font-size: 2.6rem;
+            font-size: 1rem;
         }
     }
 
@@ -130,17 +130,18 @@ const IncomeItemStyled = styled.div`
         flex-direction: column;
         gap: .2rem;
         h5{
-            font-size: 1.3rem;
-            padding-left: 2rem;
+            font-size: 1rem;
+            padding-left: 1rem;
             position: relative;
             &::before{
                 content: '';
                 position: absolute;
                 left: 0;
+                
                 top: 50%;
                 transform: translateY(-50%);
-                width: .8rem;
-                height: .8rem;
+                width: .4rem;
+                height: .4rem;
                 border-radius: 50%;
                 background: ${props => props.indicator};
             }
@@ -153,7 +154,7 @@ const IncomeItemStyled = styled.div`
             .text{
                 display: flex;
                 align-items: center;
-                gap: 1.5rem;
+                gap: 1rem;
                 p{
                     display: flex;
                     align-items: center;
@@ -163,6 +164,9 @@ const IncomeItemStyled = styled.div`
                 }
             }
         }
+    .btn-con{
+        border-radius: 50%;
+    }
     }
 `;
 

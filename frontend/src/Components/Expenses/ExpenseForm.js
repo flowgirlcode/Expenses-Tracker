@@ -12,7 +12,7 @@ function ExpenseForm() {
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
-        date: '',
+        date: new Date(),
         category: '',
         description: '',
     })
@@ -110,10 +110,10 @@ const ExpenseFormStyled = styled.form`
         padding: .5rem 1rem;
         border-radius: 5px;
         border: 2px solid #fff;
-        background: transparent;
+        background: white;//transparent;
         resize: none;
-        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        color: rgba(34, 34, 96, 0.9);
+        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.2);
+        color:rgba(34, 34, 96, 0.9);
         &::placeholder{
             color: rgba(34, 34, 96, 0.4);
         }
@@ -128,7 +128,7 @@ const ExpenseFormStyled = styled.form`
         display: flex;
         justify-content: flex-end;
         select{
-            color: rgba(34, 34, 96, 0.4);
+            color:rgba(34, 34, 96, 0.4);
             &:focus, &:active{
                 color: rgba(34, 34, 96, 1);
             }
@@ -140,6 +140,7 @@ const ExpenseFormStyled = styled.form`
             box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
             &:hover{
                 background: var(--color-green) !important;
+                color: white;
             }
         }
     }

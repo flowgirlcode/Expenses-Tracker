@@ -16,15 +16,15 @@ function Expenses() {
         <ExpenseStyled>
             <InnerLayout>
                 <h1>Expenses</h1>
-                <h2 className="total-income">Total Expense: <span>${totalExpenses()}</span></h2>
-                <div className="income-content">
+                <h2 className="total-expense">Total Expense: <span>{'₹'+totalExpenses()}</span></h2>
+                <div className="expense-content">
                     <div className="form-container">
                         <ExpenseForm />
                     </div>
-                    <div className="incomes">
-                        {expenses.map((income) => {
-                            const {_id, title, amount, date, category, description, type} = income;
-                            console.log(income)
+                    <div className="expense">
+                        {expenses.map((expense) => {
+                            const {_id, title, amount, date, category, description, type} = expense;
+                            console.log(expense)
                             return <IncomeItem
                                 key={_id}
                                 id={_id} 
@@ -48,29 +48,33 @@ function Expenses() {
 const ExpenseStyled = styled.div`
     display: flex;
     overflow: auto;
-    .total-income{
+    .total-expense{
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #FCF6F9;
-        border: 2px solid #FFFFFF;
+        margin-bottom: 5px;
+       // background: transparent;
+        background:white;//rgba(252, 246, 249, 0.78);//#FCF6F9;
+        border: 2px solid green;
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        border-radius: 20px;
-        padding: 1rem;
-        margin: 1rem 0;
-        font-size: 2rem;
-        gap: .5rem;
+       border-radius: 10px;
+        padding: 3px;
+        font-size: 1.5rem;
+        gap: 1rem;
         span{
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2rem;
+            font-weight: 400;
             color: var(--color-green);
+            padding: 2px;
         }
     }
-    .income-content{
+    .expense-content{
         display: flex;
-        gap: 2rem;
-        .incomes{
+        gap: 1rem;
+        .expense{
             flex: 1;
+            overflow-y: auto; 
+             max-height: 500px;
         }
     }
 `;

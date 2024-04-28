@@ -70,10 +70,10 @@ function Chart() {
 
 const ChartStyled = styled.div`
     background: #FCF6F9;
-    border: 2px solid #FFFFFF;
+    border: 2px solid green;
     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
     padding: 1rem;
-    border-radius: 20px;
+   // border-radius: 10px;
     height: 100%;
 `;
 

@@ -37,13 +37,14 @@ function History() {
 const HistoryStyled = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+   gap: 0.5rem;
+
     .history-item{
-        background: #FCF6F9;
-        border: 2px solid #FFFFFF;
-        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        padding: 1rem;
-        border-radius: 20px;
+        background: rgba(252, 246, 249, 0.78);
+        border: 2px solid #fff;
+        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
+        padding: 2px;
+        border-radius: 5px;
         display: flex;
         justify-content: space-between;
         align-items: center;

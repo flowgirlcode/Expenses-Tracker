@@ -12,7 +12,7 @@ function Form() {
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
-        date: '',
+        date: new Date(),
         category: '',
         description: '',
     })
@@ -59,7 +59,7 @@ function Form() {
             <div className="input-control">
                 <DatePicker 
                     id='date'
-                    placeholderText='Enter A Date'
+                    placeholderText='Select Date'
                     selected={date}
                     dateFormat="dd/MM/yyyy"
                     onChange={(date) => {
@@ -68,7 +68,7 @@ function Form() {
                 />
             </div>
             <div className="selects input-control">
-                <select required value={category} name="category" id="category" onChange={handleInput('category')}>
+                <select required value={category} name="category" id="category"  onChange={handleInput('category')}>
                     <option value=""  disabled >Select Option</option>
                     <option value="salary">Salary</option>
                     <option value="freelancing">Freelancing</option>
@@ -99,6 +99,7 @@ function Form() {
 
 
 const FormStyled = styled.form`
+
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -109,11 +110,11 @@ const FormStyled = styled.form`
         border: none;
         padding: .5rem 1rem;
         border-radius: 5px;
-        border: 2px solid #fff;
-        background: transparent;
+        border: 2px solid rgba(252, 246, 249, 0.78);
+        background:white;
         resize: none;
-        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        color: rgba(34, 34, 96, 0.9);
+        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.2);
+        color: black;//rgba(34, 34, 96, 0.9);
         &::placeholder{
             color: rgba(34, 34, 96, 0.4);
         }
@@ -130,7 +131,7 @@ const FormStyled = styled.form`
         select{
             color: rgba(34, 34, 96, 0.4);
             &:focus, &:active{
-                color: rgba(34, 34, 96, 1);
+                color:rgba(34, 34, 96, 1);
             }
         }
     }
@@ -140,6 +141,7 @@ const FormStyled = styled.form`
             box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
             &:hover{
                 background: var(--color-green) !important;
+                color: white;
             }
         }
     }
